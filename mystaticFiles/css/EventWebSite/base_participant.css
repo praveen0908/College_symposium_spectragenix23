@@ -1,0 +1,170 @@
+html {
+  height:100%;
+}
+
+body {
+  margin:0;
+}
+
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, rgb(139, 204, 245) 50%, rgb(250, 137, 201) 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+
+h1 {
+  font-family:monospace;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+
+
+/*===== title Bar=====*/
+#titleBar{
+  height: 50px;
+  margin-top: 0px;
+  display: flex;
+  
+}
+
+.header_links_container {
+  position: sticky;
+  padding: 5px -5px;
+  margin-top: -5%;
+  margin-left: -1%;
+  margin-right: -1%;
+  -webkit-sticky: 80px;
+  height: 70px;
+  top: 0px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+#logo{
+  margin-top:0px;
+  height: 60px;
+  width: 170px;
+}
+
+#navBar{
+  float: left;
+  padding: 0 50px;
+  height: 80px;
+}
+
+.navigation {
+  padding-top: 5px;
+  margin-left: -14%;
+}
+
+#navBar a{
+  height: 60px;
+  font-size: 17px;
+  color: black;
+  padding: 10px 10px;
+  cursor: pointer;
+  border-radius: 7px;
+  background-color:rgb(212, 168, 251);
+  border-color: black;
+  border: 1px solid
+}
+
+#navbar a:hover {
+  background-color: rgb(131, 178, 225);
+  color:#000;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.login_container {
+  text-align: center;
+  vertical-align: middle;
+  margin-right: 100px;
+  padding-top: 13px;
+  min-width: 307px;
+}
+.menu{
+  margin-right: -30%;
+  
+}
+.submit_btn {
+  height: 40px;
+  font-size: 120%;
+  background-color: rgb(212, 168, 251);
+  color: black;
+  padding: 10px 10px;
+  cursor: pointer;
+  border-radius: 7px;
+ 
+}
+
+/*================= Title bar dropdown ==============================*/
+
+/* .dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown button {
+  border: none;
+  padding: 15px 40px;
+  background-color: #329fec;
+  color: white;
+  transition: .3s;
+  font-size: 20px;
+}
+
+.dropdown button:hover {
+  background-color: #329fec;
+}
+
+.dropdown div a {
+  display: block;
+  text-decoration: none;
+  padding: 8px;
+  color: #000;
+}
+
+.dropdown div {
+  background-color: #fff;
+  box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  visibility: hidden;
+  position: absolute;
+  min-width: 100%;
+  opacity: 0;
+  transition: .3s;
+}
+
+.dropdown:hover div {
+  visibility: visible;
+  opacity: 1;
+}
+
+.dropdown div a:hover {
+  color: #329fec;
+} */
