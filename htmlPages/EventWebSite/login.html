@@ -1,0 +1,51 @@
+{% extends  'EventWebSite/base.html' %}
+
+{% load static %}
+
+{% block loadcss %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" type="text/css">
+    <!-- <style>
+        body{
+            background-image: url("{% static 'media/jite-image.jpg' %}");
+        }
+    </style> -->
+{% endblock %}
+
+{% block title %}
+    <title>Sign In </title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+{% endblock %}
+
+{% block content %}
+<div id="reg_form_box" class="box">
+    
+    <p class="box_title" style="font-family: 'Open Sans', cursive;">Sign In</p>
+    
+    <form method="POST">
+        {% csrf_token %}
+        <div id="username" class="inputbox innerbox">
+            <input name="usernamefield" type="email"  required="required">
+            <label style="font-family: 'Open Sans', cursive;">Email Id</label>
+        </div>
+        
+        <div id="password" class="inputbox innerbox">
+            <input name="passwordfield" type="password"  required="required">
+            <label style="font-family: 'Open Sans', cursive;">Password</label>
+        </div>
+        
+        <div class="innerbox">                        
+            <button type="submit" style="font-family: 'Open Sans', cursive;">Sign In</button>
+        </div>
+    </form>    
+</div>
+
+<div class="outbtn_container">
+
+    <a href="register" class="form_btn" style="font-family: 'Open Sans', cursive;">Register</a>
+</div>
+
+{% endblock %}
+
+{% block loadScript %}
+    
+{% endblock %}

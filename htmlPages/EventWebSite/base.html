@@ -1,0 +1,86 @@
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Kg">
+     <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <meta name="viewport" content="width=1141">
+    <!--<link rel="shortcut icon" href="{% static 'media/favicon.ico' type='image/x-icon' %}">-->
+    <link rel="stylesheet" href="{% static 'css/EventWebSite/base_participant.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% block loadcss %}
+
+    {% endblock %}
+
+    {% block title %}
+
+    {% endblock %}
+</head>
+
+<body>
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+
+    <!-- <a href="{% url 'homepage' %}"><img id='logo' src="https://lh3.googleusercontent.com/DWhfDCBUhLhLdTJ-q2lAPqclHJSiy7y0eMETQPoA61x9mdqNA3Az8v1zGLehhqlQnpguiMxeemyGcn49sSS4FUgSr_1aBdP7rjXoIR17wHRiF13GGol40j739cKzNwPg6Q=w1280" alt="Kite-logo"></a>  -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <a class="navbar-brand" href="{% url 'homepage' %}" style="font-family: 'Open Sans',cursive">SPECTRA GENIX</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'homepage' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#abtus1">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'event_detail' %}">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="homepage#contact-us">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div class="login_container">
+            {% if user.is_authenticated %}
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="profile_btn"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Hi, {{ user.fname }}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="profile_btn">
+                    <a class="dropdown-item" href="{% url 'participant_dashboard' %}">Dashboard</a>
+                    <a class="dropdown-item" href="{% url 'profile_participant' %}">Profile</a>
+                    <a class="dropdown-item" href="{% url 'participant_logout' %}">Log Out</a>
+                </div>
+            </div>
+            {% else %}
+            <div class="menu">
+                <nav>
+                    <a href="{% url 'participant_login' %}" class="btn btn-secondary" id="login_btn" style="background-color: plum;">Log In</a>
+                    <a href="{% url 'eventCommittee' %}" class="btn btn-secondary" id="admin_login_btn" style="background-color: plum;">Admin Login</a>
+                </nav>
+            </div>
+            {% endif %}
+        </div>
+    </nav>     
+    
+    {% block content %}
+
+    {% endblock %}
+
+    {% block loadScript %}
+    
+    {% endblock %}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
